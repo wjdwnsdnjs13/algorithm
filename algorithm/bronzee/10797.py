@@ -1,3 +1,4 @@
+#0131
 import sys
 a = int(sys.stdin.readline())
 x = 0
