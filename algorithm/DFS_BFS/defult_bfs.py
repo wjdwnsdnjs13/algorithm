@@ -1,3 +1,4 @@
+#BFS예제(이코테 147p)
 from collections import deque
 
 def bfs(start, graph, visited):

@@ -1,3 +1,4 @@
+#DFS예제(이코테 142p)
 def dfs(graph, v, visited):
     visited[v] = True
     result.append(v)
