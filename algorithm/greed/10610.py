@@ -7,4 +7,4 @@ while k:
         m -= 1
     k -= 1
 
-print(min(n//2, m))
+print(min(m, n//2))
