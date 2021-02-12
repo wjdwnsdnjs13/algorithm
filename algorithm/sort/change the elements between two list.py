@@ -1,3 +1,4 @@
+# (이코테) 182p
 n, k = map(int, input().split())
 a = list(map(int, input().split()))
 b = list(map(int, input().split()))
