@@ -1,4 +1,8 @@
+# 이코테 339p and 백준 18352 특정 거리의 도시 찾기.
+
+import sys
 from collections import deque
+input = sys.stdin.readline
 n, m, k, x = map(int, input().split())
 
 graph = [[] for _ in range(n + 1)]
