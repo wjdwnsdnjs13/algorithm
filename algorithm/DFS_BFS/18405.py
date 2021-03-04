@@ -1,4 +1,5 @@
 # 이코테 345p 백준 18405 경쟁적 전염
+# 우선순위 큐랑 그냥 큐랑 구분하는 법 공부하기.
 from collections import deque
 
 n, k = map(int, input().split())
