@@ -20,3 +20,4 @@ def knapsack(W, wt, val, n):
         print(i)
     return K[n][W]
 print(knapsack(w, wt, val, len(wt)))
+
