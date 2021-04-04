@@ -9,9 +9,9 @@ for i in range(n):
     zido.append(list(input().split()))
     for j in range(n):
         if zido[i][j] == 'T':
-            teacher.append((i,j))
+            teacher.append((i, j))
         elif zido[i][j] == 'X':
-            blank.append((i,j))
+            blank.append((i, j))
 
 def dfs(x, y, d):
     if d == 0:
@@ -45,12 +45,12 @@ def dfs(x, y, d):
     return False
 
 def process():
-    for x,y in teacher:
+    for x, y in teacher:
         for i in range(4):
             if dfs(x, y, i):
                 return True
     return False
-    
+
 find = False
 for w in combinations(blank, 3):
     for a, b in w:
