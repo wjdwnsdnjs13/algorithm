@@ -1,3 +1,4 @@
+# 코드 옮기고 실행해야됨.
 n, m = map(int, input().split())
 x, y, direction = map(int, input().split())
 mapp = []

@@ -11,9 +11,9 @@ def knapsack(W, wt, val, n):
                 # 0번째 행/열은 0으로 세팅하기. 위에 리스트 초기화 참고
             if i == 0 or w == 0:
                 K[i][w] = 0
-            elif wt[i-1] <= j: # 점화식을 그대로 프로그램으로
+            elif wt[i-1] <= w: # 점화식을 그대로 프로그램으로
                 # max함수 이용해서 큰 것 선택
-                K[i][w] = max(val[i-1] + K[i-1][j-wt[i-1]], K[i-1][w])
+                K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]], K[i-1][w])
             else:
                 K[i][w] = K[i-1][w]
     for i in K:
