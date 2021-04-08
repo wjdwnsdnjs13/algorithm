@@ -1,15 +1,15 @@
 # 이코테 377p 백준 14501 퇴사
-# 틀렸다고 나옴.
 n = int(input())
-t = []
-p = []
-for _ in range(n):
-    a, b = map(int, input().split())
-    t.append(a)
-    p.append(b)
 dp = [0] * (n+1)
-
+schedule = []
 for i in range(n):
-    if i + t[i] <= n:
-        dp[i+t[i]] = max(dp[i+t[i]], p[i] + dp[i])
-print(max(dp))
+    schedule.append(list(map(int, input().split())))
+print(schedule)
+Max = 0
+for i in range(n):
+    if i+schedule[i][0] <= n:
+        dp[i+schedule[i][0]] = max(dp[i] + schedule[i][1], Max)
+        Max = dp[i+schedule[i][0]]
+        for j in range(i+schedule[i][0], n+1):
+            dp[j] = Max
+print(dp)
