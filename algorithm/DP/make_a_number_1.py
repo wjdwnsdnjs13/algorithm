@@ -13,6 +13,7 @@ for i in range(2, x+1):
 print(dp[x])
 
 # 백준 1463 1로 만들기
+# 재귀로 풀면 예외 처리 할 게 너무 많아서 힘듬. 그냥 바텀 업방식으로 푸는 게 나을 듯.
 n = int(input())
 dp = [0] * (n + 1)
 for i in range(2, n + 1):
