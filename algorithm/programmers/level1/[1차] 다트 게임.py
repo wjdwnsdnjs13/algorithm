@@ -2,6 +2,7 @@ def solution(dartResult):
     answer = 0
     prev = 0
     i = -1
+    bonus = { "S" : 1, "D" : 2, "T" : 3}
     while(i < len(dartResult) - 1):
         i += 1
         # for문에서는 다음 스텝이 시작될 때 i가 초기화되어서 +1 되고 시작됨.
@@ -13,9 +14,7 @@ def solution(dartResult):
         else:
             score = int(dartResult[i])
             i += 1
-        if dartResult[i] == "S": squre = 1
-        elif dartResult[i] == "D": squre = 2
-        elif dartResult[i] == "T": squre = 3
+        squre = bonus[dartResult[i]]
         if i < len(dartResult) - 1:
             if dartResult[i + 1] == "*":
                 prev *= 2
