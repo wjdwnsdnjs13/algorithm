@@ -4,9 +4,7 @@ def solution(k, dungeons):
     count = 0
     for i in range(len(dungeons)):
         if dungeons[i][0] <= k:
-            nextDungeons = dungeons.copy()
-            nextDungeons.remove(dungeons[i])
-            dfs(k - dungeons[i][1], nextDungeons, count + 1)
+            dfs(k - dungeons[i][1], dungeons[:i] + dungeons[i+1:], count + 1)
     return max(answer)
 
 def dfs(k, dungeons, count):
@@ -15,8 +13,6 @@ def dfs(k, dungeons, count):
         return count
     for i in range(len(dungeons)):
         if dungeons[i][0] <= k:
-            nextDungeons = dungeons.copy()
-            nextDungeons.remove(dungeons[i])
-            answer.append(dfs(k - dungeons[i][1], nextDungeons, count + 1))
+            answer.append(dfs(k - dungeons[i][1], dungeons[:i] + dungeons[i+1:], count + 1))
     return count
             
