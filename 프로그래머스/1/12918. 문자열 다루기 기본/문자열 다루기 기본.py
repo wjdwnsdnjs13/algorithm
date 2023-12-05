@@ -1,6 +1,6 @@
 def solution(s):
     try:
         int(s)
-        return True if(len(s) == 6 or len(s) == 4) else False
+        return True if(len(s) in [4, 6]) else False
     except:
         return False
