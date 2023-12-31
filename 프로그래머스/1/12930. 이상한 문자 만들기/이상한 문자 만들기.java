@@ -1,11 +1,13 @@
 class Solution {
     public String solution(String s) {
+        // 삼항 연산자로 많이 줄일 수 있음.
         StringBuilder answer = new StringBuilder();
         int count = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(String.valueOf(s.charAt(i)).equals(" ")) count = -1;
-            if(count%2 == 0) answer.append(String.valueOf(s.charAt(i)).toUpperCase());
-            else answer.append(String.valueOf(s.charAt(i)).toLowerCase());
+        String[] sArray = s.split("");
+        for(String ss: sArray){
+            if(ss.equals(" ")) count = -1;
+            if(count%2 == 0) answer.append(ss.toUpperCase());
+            else answer.append(ss.toLowerCase());
             count++;
         }
         return answer.toString();
