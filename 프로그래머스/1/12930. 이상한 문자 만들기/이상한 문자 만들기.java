@@ -5,10 +5,10 @@ class Solution {
         int count = 0;
         String[] sArray = s.split("");
         for(String ss: sArray){
-            if(ss.equals(" ")) count = -1;
-            if(count%2 == 0) answer.append(ss.toUpperCase());
+            count = ss.equals(" ")?0:count + 1;
+            if(count%2 == 1) answer.append(ss.toUpperCase());
             else answer.append(ss.toLowerCase());
-            count++;
+            
         }
         return answer.toString();
     }
