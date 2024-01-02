@@ -1,19 +1,24 @@
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Solution {
-    public int[] solution(int[] arr) {
-        // Array를 사용해서 최댓값의 인덱스 목록을 리턴.
+    public String solution(String[] participant, String[] completion) {
+        // 한 명 빼고 전원 완주
+        // participant : 완주자 명단
+        // completion : 완주한 선수
+        // 완주 못 한 사람 이름 리턴
+        // 1 <= 참여자 수 <= 100,000
+        // 동명이인 있을 수도 있음.
         
-        List<Integer> indexList = new ArrayList<>();
-        int maxValue = Arrays.stream(arr).max().getAsInt();
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] == maxValue) indexList.add(i);
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+        String answer = "";
+        for(int i = 0; i < participant.length; i++){
+            if(i + 1 == participant.length || !participant[i].equals(completion[i])){
+                answer = participant[i];
+                break;
+            }
         }
-        // mapToInt : mapToInt(ToIntFunction<? super T> mapper) function 처리된 IntStream을 리턴해줌.
-        // IntStream에 넣기 위해서 Intger를 int로 변환해줘야해서 Integer#intValue() 사용
-        int[] answer = indexList.stream().mapToInt(Integer :: intValue).toArray();
+        
         return answer;
     }
 }
