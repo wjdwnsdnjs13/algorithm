@@ -18,14 +18,11 @@ def func4(a, b):
 num1 = int(input())
 num2 = int(input())
 
-answer_mod = 
-func4(num1, num2)
+answer_mod = func4(num1, num2)
 
-answer_pow = 
-func1(num1)
+answer_pow = func1(num1)
 
-answer_abs = 
-func2(num2)
+answer_abs = func2(num2)
 
 
 print("num1을 num2의 절댓값으로 나눈 나머지는", answer_mod, "입니다")
