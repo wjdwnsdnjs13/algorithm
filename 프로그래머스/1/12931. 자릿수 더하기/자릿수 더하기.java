@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Solution {
-    public int solution(int n) {
+    public int solution1(int n) {
         // 어차피 자릿수 계산하거나 stream 쓰려면 String이나 char로 변환해야할 거 같음.
         int answer = 0;
         while(n > 0){
@@ -19,7 +19,7 @@ public class Solution {
         return answer;
     }
     
-    public int solution3(int n) {
+    public int solution(int n) {
         // 어차피 자릿수 계산하거나 stream 쓰려면 String이나 char로 변환해야할 거 같음.
         String[] number = Integer.toString(n).split("");
         int answer = 0;
