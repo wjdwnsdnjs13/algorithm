@@ -27,16 +27,17 @@ class Solution {
                 prev = dp.get(i - n);
                 if(prev < value) dp.set(i, prev + 1);
             }
-            // if(i%2 == 0){
-            //     prev = dp.get(i/2);
-            //     if(prev < value) dp.set(i, prev + 1);
-            // }
+            
+            if(i%2 == 0) dp.set(i, Math.min(dp.get(i), dp.get(i/2) + 1));
+            if(i%3 == 0) dp.set(i, Math.min(dp.get(i), dp.get(i/3) + 1));
+            
             // if(i%3 == 0){
             //     prev = dp.get(i/3);
             //     if(prev < value) dp.set(i, prev + 1);
             // }
-            if(i * 2 <= y) dp.set(i * 2, Math.min(dp.get(i * 2), dp.get(i) + 1));
-            if(i * 3 <= y) dp.set(i * 3, Math.min(dp.get(i * 3), dp.get(i) + 1));
+            
+            // if(i * 2 <= y) dp.set(i * 2, Math.min(dp.get(i * 2), dp.get(i) + 1));
+            // if(i * 3 <= y) dp.set(i * 3, Math.min(dp.get(i * 3), dp.get(i) + 1));
         }
         int answer = dp.get(y);
         // for(int i: dp) System.out.println(i);
