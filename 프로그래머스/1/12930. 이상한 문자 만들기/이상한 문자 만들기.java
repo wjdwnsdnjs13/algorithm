@@ -6,8 +6,7 @@ class Solution {
         String[] sArray = s.split("");
         for(String ss: sArray){
             count = ss.equals(" ")?0:count + 1;
-            if(count%2 == 1) answer.append(ss.toUpperCase());
-            else answer.append(ss.toLowerCase());
+            answer.append((count%2 == 1)?(ss.toUpperCase()):(ss.toLowerCase()));
             
         }
         return answer.toString();
