@@ -5,9 +5,6 @@ def solution(food):
     # 준비된 음식 중 못 먹게 되는 게 있음.
     # 물이 항상 가운데 옴.
     # 음식을 배치하셈.
-    player = ""
-    for i in range(1, len(food)):
-        player += (str(i) * (food[i]//2))
-    
+    player = "".join([str(i) * (food[i]//2) for i in range(1, len(food))])
     answer = player + "0" + player[::-1]
     return answer
